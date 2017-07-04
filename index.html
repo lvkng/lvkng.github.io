@@ -6,18 +6,23 @@
 		<title></title>
 		<style>
 			img {
-				width: 10%;
+				width: 133.3px;
+				height: 83.3px;
 			}
 		</style>
 		<script type="text/javascript" src="js/jquery.1.9.min.js"></script>
 		<script>
 			window.onload = function() {
-				$("img").css("opacity","0.3"); //设置透明度
-				$("img").mousemove(function() {
-					$("img").css("opacity","0.3"); //设置透明度
-				});
-				$("img").mouseout(function() {
-					$("img").css("opacity","0.3"); //设置透明度
+				$("img").css("cursor", "pointer"); //设置透明度
+
+				$("img").mouseover(function() {
+					if($(this).is(":animated")) {
+						$(this).stop(true, false).fadeTo("fast", "0.5");
+					} else {
+						$(this).fadeTo("fast", "0.5");
+					}
+				}).mouseleave(function() {
+					$(this).fadeTo("fast", "1");
 				});
 			}
 		</script>
