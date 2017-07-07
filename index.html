@@ -25,10 +25,37 @@
 					$(this).fadeTo("fast", "1");
 				});
 			}
-		</script>
+
+	var url = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=?&json=1"
+	$(function() {
+		$("#btn").click(function() {
+			$("#content").html("");
+			$.getJSON(url, {
+				wd : $("#key").val()
+			}, function(data) {
+				for ( var i in data.s) {
+					$("#content").append(data.s[i] + "<br>");
+				}
+			});
+		});
+	});
+</script>
 	</head>
 
+
+
+
+	
+</body>
+</html>
+	
 	<body>
+	<input type="text" id="key" />
+	<input type="button" id="btn" value="搜索" />
+	<div id="content"></div>
+	
+		<hr>
+
 <img src="SimpTab1\SimpTab-20170402205503-Bing.com Image-熔岩床国家纪念碑.jpg" />
 <img src="SimpTab1\SimpTab-20170404162313-Bing.com Image.jpg" />
 <img src="SimpTab1\SimpTab-20170404162946-Bing.com Image.jpg" />
