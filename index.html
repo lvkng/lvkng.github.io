@@ -34,7 +34,7 @@
 				wd : $("#key").val()
 			}, function(data) {
 				for ( var i in data.s) {
-					$("#content").append("<a href='#'>").append(data.s[i] + "<br>").append("</a>");
+					$("#content").append("<a href='#'>").append(data.s[i]).append("</a><br>");
 				}
 			});
 		});
