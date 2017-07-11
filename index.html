@@ -9,11 +9,12 @@
 				width: 133.3px;
 				height: 83.3px;
 			}
+			a{text-decoration:none}
 		</style>
 		<script type="text/javascript" src="js/jquery.1.9.min.js"></script>
 		<script>
 			window.onload = function() {
-				$("img").css("cursor", "pointer"); //设置透明度
+				$("img").css("cursor", "pointer"); //设置透 明度
 
 				$("img").mouseover(function() {
 					if($(this).is(":animated")) {
@@ -34,7 +35,7 @@
 				wd : $("#key").val()
 			}, function(data) {
 				for ( var i in data.s) {
-					$("#content").append("<a href='#'>").append(data.s[i]).append("</a><br>");
+					$("#content").append("<a href='javascript:void(0)'>" + data.s[i]+ "</a><br>");
 				}
 			});
 		});
