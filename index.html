@@ -39,12 +39,22 @@
 				}
 			});
 		});
+		$("#key").keyup(function() {
+			$("#content").html("");
+			$.getJSON(url, {
+				wd : $("#key").val()
+			}, function(data) {
+				for ( var i in data.s) {
+					$("#content").append("<a href='javascript:void(0)'>" + data.s[i]+ "</a><br>");
+				}
+			});
+		});
 	});
 </script>
 	</head>
 
 <body>
-	<input type="text" id="key" />
+	<input type="text" id="key"/>
 	<input type="button" id="btn" value="百度一下" />
 	<div id="content"></div>
 </body>
