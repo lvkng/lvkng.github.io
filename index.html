@@ -30,20 +30,20 @@
 	var url = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=?&json=1"
 	$(function() {
 		$("#btn").click(function() {
-			$("#content").html("");
 			$.getJSON(url, {
 				wd : $("#key").val()
 			}, function(data) {
+				$("#content").html("");
 				for ( var i in data.s) {
 					$("#content").append("<a href='javascript:void(0)'>" + data.s[i]+ "</a><br>");
 				}
 			});
 		});
 		$("#key").keyup(function() {
-			$("#content").html("");
 			$.getJSON(url, {
 				wd : $("#key").val()
 			}, function(data) {
+				$("#content").html("");
 				for ( var i in data.s) {
 					$("#content").append("<a href='javascript:void(0)'>" + data.s[i]+ "</a><br>");
 				}
